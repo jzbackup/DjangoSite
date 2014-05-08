@@ -12,4 +12,5 @@ urlpatterns = patterns('',
 	#url(r'^friends/', include('friends.urls')),
 	url(r'^admin/', include(admin.site.urls)),
 	#url(r'^todo/', include('todo.urls')),
+	url(r'^books/', include('books.urls')),
 )
