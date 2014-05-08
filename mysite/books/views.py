@@ -22,13 +22,15 @@ def index(request):
 #	return render_to_response('books/search_form.html')
 
 def search(request):
-	error = False
+	errors = []
 	if 'q' in request.GET:
 		q = request.GET['q']
 		if not q:
-			error = True
+			errors.append('Enter a search term.')
+		elif len(q) > 20:
+			errors.append('Please enter at most 20 characters.')
 		else:
 			books = Book.objects.filter(title__icontains=q)
 			return render_to_response('books/search_results.html',
 				{'books': books, 'query': q})
-	return render_to_response('books/search_form.html', {'error': error})
+	return render_to_response('books/search_form.html', {'errors': errors})
