@@ -13,4 +13,5 @@ urlpatterns = patterns('',
 	url(r'^admin/', include(admin.site.urls)),
 	#url(r'^todo/', include('todo.urls')),
 	url(r'^books/', include('books.urls')),
+	url(r'^contact/', include('contact.urls')),
 )

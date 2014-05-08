@@ -6,9 +6,11 @@ from django.template import RequestContext
 from django.core.urlresolvers import reverse
 import datetime
 import json
+#from django.core.mail import send_mail
 
 # Create your views here.
 def current_datetime(request):
+	#send_mail(u'1', u'2', '349746102@qq.com', ['zhaojinhust@gmail.com'], fail_silently=False)
 	now = datetime.datetime.now()
 	html = "<html><body> It is now %s. </body></html>" % now
 	return HttpResponse(html)
